@@ -22,10 +22,25 @@ func main() {
 	//const的使用
 	//const_test()
 	//指针
-	num := 123
-	var ptr *int
-	ptr = &num
-	fmt.Println(*ptr)
+	//num := 123
+	//var ptr *int
+	//ptr = &num
+	//fmt.Println(*ptr)
+	//if
+	//if_test()
+	//switch
+	//switch_test()
+	//fallthrough
+	//fallthrough_test()
+	//for
+	//for_test()
+	//for_range
+	//for_range_test()
+	//swap
+	a := 1
+	b := 2
+	swap(&a, &b)
+	fmt.Print(a, b)
 }
 
 //空白符测试函数
@@ -47,4 +62,79 @@ func const_test() {
 	fmt.Println(a)
 	fmt.Println(b)
 	fmt.Println(c)
+}
+
+// if 语句执行
+func if_test() {
+	num := 10
+	if num == 10 {
+		fmt.Println("num等于10")
+	} else {
+		fmt.Println("num不等于10")
+	}
+}
+
+// switch 语句执行
+func switch_test() {
+	age := 20
+	switch age {
+	case 20:
+		fmt.Println("年轻人")
+	default:
+		fmt.Println("非年轻人")
+	}
+}
+
+func fallthrough_test() {
+	//fallthrough会强制执行下一个case,不管true或false
+
+	switch {
+	case false:
+		fmt.Println("1、case 条件语句为 false")
+		fallthrough
+	case true:
+		fmt.Println("2、case 条件语句为 true")
+		fallthrough
+	case false:
+		fmt.Println("3、case 条件语句为 false")
+		fallthrough
+	case true:
+		fmt.Println("4、case 条件语句为 true")
+	//这个地方没有写fallthrough所以不会执行后面的句子
+	case false:
+		fmt.Println("5、case 条件语句为 false")
+		fallthrough
+	default:
+		fmt.Println("6、默认 case")
+	}
+}
+
+func for_test() {
+	//go是没有while循环的额
+	sum := 0 //下面这种for写法要从1开始
+	//for i:=0;i<100;i++ {
+	//	sum = sum+i
+	//}
+	for sum < 10 {
+		sum += sum
+		fmt.Println(sum)
+	}
+}
+
+func for_range_test() {
+	strings := []string{"string1", "string2"}
+	nums := [5]int{1, 2, 4}
+	for i, j := range strings {
+		fmt.Println(i, j)
+	}
+	for i, j := range nums {
+		fmt.Println(i, j)
+	}
+}
+
+func swap(a *int, b *int) {
+	tmp := *a
+	*a = *b
+	*b = tmp
+
 }
