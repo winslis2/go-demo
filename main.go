@@ -37,10 +37,14 @@ func main() {
 	//for_range
 	//for_range_test()
 	//swap
-	a := 1
-	b := 2
-	swap(&a, &b)
-	fmt.Print(a, b)
+	//a := 1
+	//b := 2
+	//swap(&a, &b)
+	//fmt.Print(a, b)
+	//闭包
+	sequence := getSequence() //返回的是个函数
+	fmt.Println(sequence())
+	fmt.Println(sequence())
 }
 
 //空白符测试函数
@@ -136,5 +140,19 @@ func swap(a *int, b *int) {
 	tmp := *a
 	*a = *b
 	*b = tmp
+}
 
+//因为返回值类型是func 且这个返回函数的返回类型是int
+func getSequence() func() int {
+	i := 0
+	return func() int {
+		i += 1
+		return i
+	}
+}
+
+//返会类型对比
+func func_type() func() {
+	return func() {
+	}
 }
