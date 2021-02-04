@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	//"go/types"
 	"unsafe"
 )
 
@@ -46,7 +47,10 @@ func main() {
 	//fmt.Println(sequence())
 	//fmt.Println(sequence())
 	//数组
-	arr_test()
+	//arr_test()
+	//func
+	_, test := func_test()
+	fmt.Println(test)
 }
 
 //空白符测试函数
@@ -166,4 +170,9 @@ func arr_test() {
 	numbs = append(numbs, 2)
 	fmt.Println(numbs)
 	fmt.Println(len(numbs))
+}
+
+//可以在函数返回值定义好返回值的名称，如果在函数体中return 后没有返回值就按照该类型的默认值来返回
+func func_test() (res bool, res1 int) {
+	return
 }
