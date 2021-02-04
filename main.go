@@ -42,9 +42,11 @@ func main() {
 	//swap(&a, &b)
 	//fmt.Print(a, b)
 	//闭包
-	sequence := getSequence() //返回的是个函数
-	fmt.Println(sequence())
-	fmt.Println(sequence())
+	//sequence := getSequence() //返回的是个函数
+	//fmt.Println(sequence())
+	//fmt.Println(sequence())
+	//数组
+	arr_test()
 }
 
 //空白符测试函数
@@ -155,4 +157,13 @@ func getSequence() func() int {
 func func_type() func() {
 	return func() {
 	}
+}
+
+func arr_test() {
+	//没有限定范围可以使用append动态添加
+	numbs := []int{} //实际上这是切片
+	numbs = append(numbs, 1)
+	numbs = append(numbs, 2)
+	fmt.Println(numbs)
+	fmt.Println(len(numbs))
 }
