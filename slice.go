@@ -12,8 +12,8 @@ func slice_test() {
 	//如果需要切面初始化	s:=int[]{1,2,3}
 	s = append(s, 1)
 	s = append(s, 2)
-	for k, v := range s {
-		fmt.Println(k, v)
+	for v := range s {
+		fmt.Println(v)
 	}
 }
 

@@ -19,9 +19,12 @@ func struct_test() {
 	//fmt.Println(book1.title)
 	//fmt.Println(book1)
 	struct_pointer_test(&book1)
+	fmt.Println(book1)
 }
 
+//可以传指针，也可以不传指针 ,传递指针会修改原来的值
 func struct_pointer_test(book *Book) {
+	book.title = "hshhs"
 	//结构体指针可以直接使用
 	fmt.Println(book)
 }
