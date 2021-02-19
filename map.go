@@ -25,7 +25,7 @@ func map_test() {
 }
 
 func map_test1() {
-	//初始化map map后不是跟的括号
+	//初始化map map后不是跟的括号,这里不是make
 	man := map[string]string{"name": "lis2", "city": "henan"}
 	fmt.Println(man)
 }
