@@ -3,12 +3,15 @@ package main
 import "fmt"
 
 func main() {
+	a := 1
+	fmt.Printf("%p", &a) //0xc000016080  %p是指针，相比%x多了0x其他部分相同
+	fmt.Printf("%x", &a) //c000016080
 	//pointer_test()
-	pointer_test1()
+	//pointer_test1()
 }
 func pointer_test() {
 	var ptr *int
-	fmt.Printf("%x", ptr) //0
+	fmt.Printf("%x", ptr) //0 指针ptr的值为0 %x16进制表示
 	fmt.Println(ptr)      //nil
 
 }
