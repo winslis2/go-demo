@@ -7,6 +7,7 @@ func main() {
 	map_test1()
 }
 func map_test() {
+	//不是进行初始化的时候要使用make创建
 	man := make(map[string]string)
 	man["name"] = "lis2"
 	man["city"] = "henan"

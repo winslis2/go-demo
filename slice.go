@@ -3,6 +3,12 @@ package main
 import "fmt"
 
 func main() {
+	//make 是要写第二个参数的，第三个参数可以不写
+	ints := make([]int, 2)
+	ints = append(ints, 1)
+	ints = append(ints, 2)
+	ints = append(ints, 3)
+	fmt.Println(ints)
 	slice_test()
 	//slice_copy()
 }
