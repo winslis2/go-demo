@@ -15,7 +15,12 @@ func main() {
 }
 
 func struct_test() {
+	//定义struct可以写name,也可以按顺序不写
 	book1 := Book{"PHP是世界上最好的语言", "lis2", "PHP", 1}
+	//+v和 v的区别
+	fmt.Printf("%v\n", book1)  //{PHP是世界上最好的语言 lis2 PHP 1}
+	fmt.Printf("%+v\n", book1) //{title:PHP是世界上最好的语言 auth:lis2 subject:PHP book_id:1}&{hshhs lis2 PHP 1}
+
 	//fmt.Println(book1.title)
 	//fmt.Println(book1)
 	struct_pointer_test(&book1)
